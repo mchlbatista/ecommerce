@@ -53,28 +53,31 @@ export default {
                             <div class="flex-none w-30 ml-2">
                                 <Link
                                     :href="route('inventory.sku', sku)"
-                                    class="px-5 h-10 w-30 text-white rounded-lg hover:bg-slate-500 bg-sky-800"
-                                    as="button">Search
+                                    class="px-5 h-10 w-30 text-white rounded-lg bg-sky-800"
+                                    :class="[!sku.length ? 'bg-zinc-300' : 'hover:bg-slate-500']"
+                                    as="button" type="button" :disabled="!sku.length" @click="(sku='')">Search
                                 </Link>
                             </div>
                             <div class="flex-auto w-30 ml-2">
-                                <input type="number" class="px-5 h-10 w-full rounded-lg focus:shadow focus:outline-none" placeholder="Product ID" v-model="product_id" @keypress="isNumber($event)">
+                                <input type="text" class="px-5 h-10 w-full rounded-lg focus:shadow focus:outline-none" placeholder="Product ID" v-model="product_id" @keypress="isNumber($event)">
                             </div>
                             <div class="flex-none w-30 ml-2">
                                 <Link
                                     :href="route('inventory.product_id', product_id)"
-                                    class="px-5 h-10 w-30 text-white rounded-lg hover:bg-slate-500 bg-sky-800"
-                                    as="button">Search
+                                    class="px-5 h-10 w-30 text-white rounded-lg bg-sky-800"
+                                    :class="[!product_id.length ? 'bg-zinc-300' : 'hover:bg-slate-500']"
+                                    as="button" type="button" :disabled="!product_id.length" @click="(product_id='')">Search
                                 </Link>
                             </div>
                             <div class="flex-auto w-30 ml-2">
-                                <input type="number" class="px-5 h-10 w-full rounded-lg focus:shadow focus:outline-none" placeholder="Quantity Threshold" v-model="threshold" @keypress="isNumber($event)">
+                                <input type="text" class="px-5 h-10 w-full rounded-lg focus:shadow focus:outline-none" placeholder="Quantity Threshold" v-model="threshold" @keypress="isNumber($event)">
                             </div>
                             <div class="flex-none w-30 ml-2">
                                 <Link
                                     :href="route('inventory.quantity_below_that', threshold)"
-                                    class="px-5 h-10 w-30 text-white rounded-lg hover:bg-slate-500 bg-sky-800"
-                                    as="button">Search
+                                    class="px-5 h-10 w-30 text-white rounded-lg bg-sky-800"
+                                    :class="[!threshold.length ? 'bg-zinc-300' : 'hover:bg-slate-500']"
+                                    as="button" type="button" :disabled="!threshold.length" @click="(threshold='')">Search
                                 </Link>
                             </div>
                         </div>
