@@ -18,7 +18,7 @@ class InventoryControllerTest extends TestCase
      *
      * @return void
      */
-    public function test_get_client_inventory()
+    public function test_get_user_inventory()
     {
         # Given
         $product_count = 5;
@@ -56,7 +56,7 @@ class InventoryControllerTest extends TestCase
      *
      * @return void
      */
-    public function test_get_client_inventory_sku()
+    public function test_get_user_inventory_sku()
     {
         # Given
         $product_count = 5;
@@ -101,7 +101,7 @@ class InventoryControllerTest extends TestCase
      *
      * @return void
      */
-    public function test_get_client_inventory_product_id()
+    public function test_get_user_inventory_product_id()
     {
         # Given
         $product_count = 5;

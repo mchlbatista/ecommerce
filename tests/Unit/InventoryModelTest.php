@@ -12,11 +12,11 @@ class InventoryModelTest extends TestCase
     use DatabaseMigrations;
 
     /**
-     * Can get Client Inventory.
+     * Can get User Inventory.
      *
      * @return void
      */
-    public function test_get_client_inventory()
+    public function test_get_user_inventory()
     {
         # Given
         $product_count = 5;
