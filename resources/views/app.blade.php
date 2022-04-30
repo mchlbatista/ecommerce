@@ -14,6 +14,7 @@
 
         <!-- Scripts -->
         @routes
+        <script src="https://kit.fontawesome.com/9d28af7530.js" crossorigin="anonymous"></script>
         <script src="{{ mix('js/app.js') }}" defer></script>
         @inertiaHead
     </head>

@@ -26,6 +26,7 @@ class InventoryController extends Controller
 
         return Inertia::render('Inventory/Inventory',[
             'inventory' => $inventory,
+            'title' => 'Inventory'
         ]);
     }
 
@@ -53,6 +54,7 @@ class InventoryController extends Controller
 
         return Inertia::render('Inventory/Inventory',[
             'inventory' => $inventory,
+            'title' => "Inventory | With less than \"$threshold\" qty"
         ]);
     }
 
@@ -80,6 +82,7 @@ class InventoryController extends Controller
 
         return Inertia::render('Inventory/Inventory',[
             'inventory' => $inventory,
+            'title' => "Inventory | SKU \"$sku\""
         ]);
     }
 
@@ -107,6 +110,7 @@ class InventoryController extends Controller
 
         return Inertia::render('Inventory/Inventory',[
             'inventory' => $inventory,
+            'title' => "Inventory | Product ID \"$id\""
         ]);
     }
 }

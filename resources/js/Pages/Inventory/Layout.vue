@@ -37,9 +37,7 @@ export default {
     <BreezeAuthenticatedLayout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                <Link :href="route('inventory')" class="hover:text-slate-500 text-sky-800">
-                    Inventory
-                </Link>
+                {{ $page.props.title }}
             </h2>
         </template>
         <div class="pt-5">
@@ -47,6 +45,11 @@ export default {
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-5 bg-white border-b border-gray-200">
                         <div class="flex">
+                            <div class="flex-none w10 ml-2 pt-2">
+                                <Link :href="route('inventory')">
+                                    <i class="fa-solid fa-warehouse pr-5"></i>
+                                </Link>
+                            </div>
                             <div class="flex-auto w-30 ml-2">
                                 <input type="text" class="px-5 h-10 w-full rounded-lg focus:shadow focus:outline-none" placeholder="SKU" v-model="sku">
                             </div>
