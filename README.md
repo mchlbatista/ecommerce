@@ -4,7 +4,7 @@
 ## Development Setup
 ---
 
-Copy example `.env.example -> .env` file and update values as needed.
+Copy `.env.example -> .env` file.
 
 ```
 cp .env.example .env
