@@ -1,6 +1,7 @@
 ARTIFACT=$(shell basename $(PWD))
 
 build:
+	composer install
 	docker compose build --no-cache
 
 build-test:

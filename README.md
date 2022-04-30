@@ -4,6 +4,15 @@
 ## Development Setup
 ---
 
+### Local Requirements
+---
+1. Make
+2. PHP ^7.3|^8.0
+3. Composer
+4. Node/NPM
+
+### Setup
+
 Copy `.env.example -> .env` file.
 
 ```
@@ -15,6 +24,8 @@ Create containers for test and run the app.
 make setup
 ```
 
+### Run
+
 Run the app at `http://localhost`
 ```
 make run
@@ -23,7 +34,8 @@ make run
 ![app_preview](https://github.com/mchlbatista/ecommerce_commentsold/blob/master/app_preview.png)
 
 
-Run tests
+### Tests
+
 ```
 make test
 ```
