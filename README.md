@@ -7,9 +7,8 @@
 ### Local Requirements
 ---
 1. Make
-2. PHP ^7.3|^8.0
-3. Composer
-4. Node/NPM
+2. Composer
+3. Docker
 
 ### Setup
 
