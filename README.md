@@ -33,7 +33,6 @@ make run
 
 ![app_preview](https://github.com/mchlbatista/ecommerce_commentsold/blob/master/app_preview.png)
 
-
 ### Tests
 
 ```

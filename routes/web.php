@@ -34,7 +34,7 @@ Route::middleware(['auth'])->group(function () {
     Route::controller(InventoryController::class)->group(function () {
         Route::get('/inventory', 'index')->name('inventory');
         Route::get('/inventory/quantity-below-than/{threshold}', 'quantityBelowThat')->name('inventory.quantity_below_that');
-        Route::get('/inventory/sku/{id}', 'sku')->name('inventory.sku');
+        Route::get('/inventory/sku/{sku}', 'sku')->name('inventory.sku');
         Route::get('/inventory/product-id/{id}', 'productId')->name('inventory.product_id');
     });
 });

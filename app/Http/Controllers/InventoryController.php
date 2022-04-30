@@ -8,10 +8,13 @@ use Illuminate\Http\Request;
 
 class InventoryController extends Controller
 {
-    const PAGINATION = 25;
+    /**
+     * Default pagination
+     */
+    public const PAGINATION = 25;
 
     /**
-     * Display a listing of the resource.
+     * Display a list of current User Inventory.
      *
      * @return \Illuminate\Http\Response
      */
@@ -28,7 +31,8 @@ class InventoryController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display list of current User Inventory
+     * with count lower than the given threshold.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -55,23 +59,24 @@ class InventoryController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display list of current User Inventory
+     * with given SKU.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function sku($id)
+    public function sku($sku)
     {
         $user_id = auth()->user()->id;
         $inventory = Inventory::byUser($user_id)
-        ->where('sku', '=', $id)
+        ->where('sku', '=', $sku)
         ->paginate(static::PAGINATION);
 
         if(!$inventory->total()) {
             return redirect()
             ->back()
             ->with(
-                'failure', "Product SKU $id not found."
+                'failure', "Product SKU $sku not found."
             );
         }
 
@@ -82,7 +87,8 @@ class InventoryController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display list of current User Inventory
+     * with given Product ID.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
