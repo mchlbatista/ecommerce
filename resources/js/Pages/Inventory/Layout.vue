@@ -47,8 +47,8 @@ export default {
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-5 bg-white border-b border-gray-200">
                         <div class="flex">
-                            <div class="flex-none w-30 ml-2">
-                                <input type="text" class="px-5 h-10 w-max rounded-lg focus:shadow focus:outline-none" placeholder="SKU" v-model="sku">
+                            <div class="flex-auto w-30 ml-2">
+                                <input type="text" class="px-5 h-10 w-full rounded-lg focus:shadow focus:outline-none" placeholder="SKU" v-model="sku">
                             </div>
                             <div class="flex-none w-30 ml-2">
                                 <Link
@@ -57,8 +57,8 @@ export default {
                                     as="button">Search
                                 </Link>
                             </div>
-                            <div class="flex-none w-30 ml-2">
-                                <input type="number" class="px-5 h-10 w-max rounded-lg focus:shadow focus:outline-none" placeholder="Product ID" v-model="product_id" @keypress="isNumber($event)">
+                            <div class="flex-auto w-30 ml-2">
+                                <input type="number" class="px-5 h-10 w-full rounded-lg focus:shadow focus:outline-none" placeholder="Product ID" v-model="product_id" @keypress="isNumber($event)">
                             </div>
                             <div class="flex-none w-30 ml-2">
                                 <Link
@@ -67,8 +67,8 @@ export default {
                                     as="button">Search
                                 </Link>
                             </div>
-                            <div class="flex-none w-30 ml-2">
-                                <input type="number" class="px-5 h-10 w-max rounded-lg focus:shadow focus:outline-none" placeholder="Quantity Threshold" v-model="threshold" @keypress="isNumber($event)">
+                            <div class="flex-auto w-30 ml-2">
+                                <input type="number" class="px-5 h-10 w-full rounded-lg focus:shadow focus:outline-none" placeholder="Quantity Threshold" v-model="threshold" @keypress="isNumber($event)">
                             </div>
                             <div class="flex-none w-30 ml-2">
                                 <Link

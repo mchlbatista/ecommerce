@@ -11,7 +11,7 @@ class InventoryController extends Controller
     /**
      * Default pagination
      */
-    public const PAGINATION = 25;
+    public const PAGINATION = 10;
 
     /**
      * Display a list of current User Inventory.
