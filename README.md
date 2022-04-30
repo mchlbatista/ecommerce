@@ -42,14 +42,14 @@ make test
 PHPUnit 9.5.20
 
 Inventory Model (Tests\Feature\InventoryModel)
- ✔ Get client inventory
+ ✔ Get user inventory
 
 Inventory Controller (Tests\Feature\InventoryController)
- ✔ Get client inventory
- ✔ Get client inventory sku
- ✔ Get client inventory product id
+ ✔ Get user inventory
+ ✔ Get user inventory sku
+ ✔ Get user inventory product id
 
-Time: 00:02.277, Memory: 34.50 MB
+Time: 00:02.295, Memory: 34.50 MB
 
-OK (4 tests, 49 assertions)
+OK (4 tests, 34 assertions)
 ```

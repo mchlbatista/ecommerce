@@ -10,19 +10,15 @@ export default {
         Link,
         Pagination,
     },
-    props: {
-        user: Object,
-        inventory: Object,
-     },
-     data(){
-         return{
+    data(){
+        return{
             sku: "",
             product_id: "",
             threshold: ""
-         }
-     },
-     methods: {
-         isNumber(event){
+        }
+    },
+    methods: {
+        isNumber(event){
             event = (event) ? event : window.event;
             var charCode = (event.which) ? event.which : event.keyCode;
             if ((charCode > 31 && (charCode < 48 || charCode > 57)) && charCode !== 46) {
@@ -30,8 +26,8 @@ export default {
             } else {
                 return true;
             }
-         }
-     }
+        }
+    }
 }
 </script>
 
@@ -81,11 +77,6 @@ export default {
                                     as="button">Search
                                 </Link>
                             </div>
-                            <div class="flex-auto w-max">
-                                <p class="text-right font-bold">
-                                    Total: {{ inventory.total }}
-                                </p>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -102,37 +93,7 @@ export default {
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 bg-white border-b border-gray-200">
-                        <table class="table-auto border-collapse w-full">
-                            <thead>
-                                <tr>
-                                    <th class="border-b dark:border-slate-400 p-4 pl-8 text-left">Product Name</th>
-                                    <th class="border-b dark:border-slate-400 p-4 pl-8 text-left">SKU</th>
-                                    <th class="border-b dark:border-slate-400 p-4 pl-8 text-left">Qty</th>
-                                    <th class="border-b dark:border-slate-400 p-4 pl-8 text-left">Color</th>
-                                    <th class="border-b dark:border-slate-400 p-4 pl-8 text-left">Price</th>
-                                    <th class="border-b dark:border-slate-400 p-4 pl-8 text-left">Cost</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="i in inventory.data" :key="i.id">
-                                    <td class="border-b border-slate-300 p-4 pl-8">
-                                        <Link :href="route('inventory.product_id', i.product.id)" class="hover:text-slate-500 text-sky-800">
-                                            {{ i.product.product_name }}
-                                        </Link>
-                                    </td>
-                                    <td class="border-b border-slate-300 p-4 pl-8">
-                                        <Link :href="route('inventory.sku', i.sku)" class="hover:text-slate-500 text-sky-800">
-                                            {{ i.sku }}
-                                        </Link>
-                                    </td>
-                                    <td class="border-b border-slate-300 p-4 pl-8">{{ i.quantity }}</td>
-                                    <td class="border-b border-slate-300 p-4 pl-8">{{ i.color }}</td>
-                                    <td class="border-b border-slate-300 p-4 pl-8">${{ i.price_cents / 100 }}</td>
-                                    <td class="border-b border-slate-300 p-4 pl-8">${{ i.cost_cents / 100 }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <pagination class="mt-6" :links="inventory.links" />
+                        <slot />
                     </div>
                 </div>
             </div>

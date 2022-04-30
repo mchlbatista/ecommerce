@@ -24,9 +24,8 @@ class InventoryController extends Controller
         $inventory = Inventory::byUser($user_id)
         ->paginate(static::PAGINATION);
 
-        return Inertia::render('Inventory',[
+        return Inertia::render('Inventory/Inventory',[
             'inventory' => $inventory,
-            'user' => auth()->user()
         ]);
     }
 
@@ -52,9 +51,8 @@ class InventoryController extends Controller
             );
         }
 
-        return Inertia::render('Inventory',[
+        return Inertia::render('Inventory/Inventory',[
             'inventory' => $inventory,
-            'user' => auth()->user()
         ]);
     }
 
@@ -80,9 +78,8 @@ class InventoryController extends Controller
             );
         }
 
-        return Inertia::render('Inventory',[
+        return Inertia::render('Inventory/Inventory',[
             'inventory' => $inventory,
-            'user' => auth()->user()
         ]);
     }
 
@@ -108,9 +105,8 @@ class InventoryController extends Controller
             );
         }
 
-        return Inertia::render('Inventory',[
+        return Inertia::render('Inventory/Inventory',[
             'inventory' => $inventory,
-            'user' => auth()->user()
         ]);
     }
 }

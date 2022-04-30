@@ -37,11 +37,7 @@ class InventoryControllerTest extends TestCase
         $this->actingAs($user)
         ->get(route('inventory'))
         ->assertInertia(fn (Assert $page) => $page
-            ->component('Inventory')
-            ->has('user',fn (Assert $page) => $page
-                ->where('id', $user->id)
-                ->etc()
-            )
+            ->component('Inventory/Inventory')
             # Numbers of items per page
             ->has(
                 'inventory.data',
@@ -82,11 +78,7 @@ class InventoryControllerTest extends TestCase
         $this->actingAs($user)
         ->get(route('inventory.sku', $sku))
         ->assertInertia(fn (Assert $page) => $page
-            ->component('Inventory')
-            ->has('user',fn (Assert $page) => $page
-                ->where('id', $user->id)
-                ->etc()
-            )
+            ->component('Inventory/Inventory')
             # Numbers of items per page
             ->has(
                 'inventory.data',
@@ -120,11 +112,7 @@ class InventoryControllerTest extends TestCase
         $this->actingAs($user)
         ->get(route('inventory.product_id', rand(1, $product_count)))
         ->assertInertia(fn (Assert $page) => $page
-            ->component('Inventory')
-            ->has('user',fn (Assert $page) => $page
-                ->where('id', $user->id)
-                ->etc()
-            )
+            ->component('Inventory/Inventory')
             # Numbers of items per page
             ->has(
                 'inventory.data',
