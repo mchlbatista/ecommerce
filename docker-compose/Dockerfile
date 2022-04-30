@@ -30,7 +30,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 # Copy existing application directory contents
 COPY . /app
-RUN rm -R ./node_modules
 
 # Fix Permissions
 # RUN chown -R www-data:www-data /app
