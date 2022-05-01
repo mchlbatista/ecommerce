@@ -13,13 +13,7 @@
 
 ### Setup
 
-Copy `.env.example -> .env` file.
-
-```
-cp .env.example .env
-```
-
-Create containers for test and run the app.
+Create containers and conf files for test and run the app.
 ```
 make setup
 ```

@@ -10,6 +10,7 @@ build-test:
 		-t ${ARTIFACT}:test .
 
 setup: build build-test
+	cp .env.example .env
 	touch ./database/database.sqlite
 
 run:
