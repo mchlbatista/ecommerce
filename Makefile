@@ -10,6 +10,7 @@ build-test:
 		-t ${ARTIFACT}:test .
 
 setup: build build-test
+	touch ./database/database.sqlite
 
 run:
 	docker compose up || \
