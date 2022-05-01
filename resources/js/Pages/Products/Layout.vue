@@ -30,7 +30,7 @@ export default {
 </script>
 
 <template>
-    <Head title="Inventory" />
+    <Head title="Products" />
 
     <BreezeAuthenticatedLayout>
         <template #header>

@@ -17,7 +17,7 @@ export default {
 </script>
 
 <template>
-    <Head title="Inventory" />
+    <Head title="Product" />
     <div class="grid grid-cols-2 gap-4">
         <div class="pb-10">
             <div class="text-sm text-grey-500 pb-3">Product</div>

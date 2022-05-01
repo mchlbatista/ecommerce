@@ -17,7 +17,7 @@ export default {
 </script>
 
 <template>
-    <Head title="Inventory" />
+    <Head title="Products" />
     <table class="table-auto border-collapse w-full">
         <thead>
             <tr>
