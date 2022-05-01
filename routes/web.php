@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\InventoryController;
+use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -31,10 +32,18 @@ Route::middleware(['auth'])->group(function () {
         ]);
     })->name('dashboard');
 
+    # Inventory
     Route::controller(InventoryController::class)->group(function () {
         Route::get('/inventory', 'index')->name('inventory');
         Route::get('/inventory/quantity-below-than/{threshold}', 'quantityBelowThat')->name('inventory.quantity_below_that');
         Route::get('/inventory/sku/{sku}', 'sku')->name('inventory.sku');
         Route::get('/inventory/product-id/{id}', 'productId')->name('inventory.product_id');
+
+
+    });
+    # Products
+    Route::controller(ProductsController::class)->group(function () {
+        Route::get('/products', 'index')->name('products');
+        Route::get('/product/{id}', 'show')->name('products.product');
     });
 });

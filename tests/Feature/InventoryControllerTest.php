@@ -14,7 +14,7 @@ class InventoryControllerTest extends TestCase
     use DatabaseMigrations;
 
     /**
-     * Can get Client Inventory.
+     * Can get User Inventory.
      *
      * @return void
      */
@@ -48,7 +48,7 @@ class InventoryControllerTest extends TestCase
     }
 
     /**
-     * Can get Client Inventory SKU.
+     * Can get User Inventory SKU.
      *
      * @return void
      */
@@ -89,7 +89,7 @@ class InventoryControllerTest extends TestCase
     }
 
     /**
-     * Can get Client Inventory Product ID.
+     * Can get User Inventory Product ID.
      *
      * @return void
      */

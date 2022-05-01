@@ -12,9 +12,7 @@ export default {
     },
     data(){
         return{
-            sku: "",
-            product_id: "",
-            threshold: ""
+            product_id: ""
         }
     },
     methods: {
@@ -32,12 +30,12 @@ export default {
 </script>
 
 <template>
-    <Head title="Inventory" />
+    <Head title="Products" />
 
     <BreezeAuthenticatedLayout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ $page.props.title }}
+                Products
             </h2>
         </template>
         <div class="pt-5">
@@ -46,28 +44,12 @@ export default {
                     <div class="p-5 bg-white border-b border-gray-200">
                         <div class="flex">
                             <div class="flex-none w10 ml-2 pt-2">
-                                <Link :href="route('inventory')">
-                                    <i class="fa-solid fa-warehouse pr-5"></i>
+                                <Link :href="route('products')">
+                                    <i class="fa-solid fa-box-open pr-5"></i>
                                 </Link>
                             </div>
                             <div class="flex-auto w-30 ml-2">
-                                <input
-                                    type="text"
-                                    class="px-5 h-10 w-full rounded-lg focus:shadow focus:outline-none"
-                                    placeholder="SKU"
-                                    v-model="sku">
-                            </div>
-                            <div class="flex-none w-30 ml-2">
-                                <Link
-                                    :href="route('inventory.sku', sku)"
-                                    class="px-5 h-10 w-30 text-white rounded-lg bg-sky-800"
-                                    :class="[!sku.length ? 'bg-zinc-300' : 'hover:bg-slate-500']"
-                                    as="button" type="button" :disabled="!sku.length" @click="(sku='')">Search
-                                </Link>
-                            </div>
-                            <div class="flex-auto w-30 ml-2">
-                                <input
-                                    type="text"
+                                <input type="text"
                                     class="px-5 h-10 w-full rounded-lg focus:shadow focus:outline-none"
                                     placeholder="Product ID"
                                     v-model="product_id"
@@ -75,26 +57,10 @@ export default {
                             </div>
                             <div class="flex-none w-30 ml-2">
                                 <Link
-                                    :href="route('inventory.product_id', product_id)"
+                                    :href="route('products.product', product_id)"
                                     class="px-5 h-10 w-30 text-white rounded-lg bg-sky-800"
                                     :class="[!product_id.length ? 'bg-zinc-300' : 'hover:bg-slate-500']"
                                     as="button" type="button" :disabled="!product_id.length" @click="(product_id='')">Search
-                                </Link>
-                            </div>
-                            <div class="flex-auto w-30 ml-2">
-                                <input
-                                    type="text"
-                                    class="px-5 h-10 w-full rounded-lg focus:shadow focus:outline-none"
-                                    placeholder="Quantity Threshold"
-                                    v-model="threshold"
-                                    @keypress="isNumber($event)">
-                            </div>
-                            <div class="flex-none w-30 ml-2">
-                                <Link
-                                    :href="route('inventory.quantity_below_that', threshold)"
-                                    class="px-5 h-10 w-30 text-white rounded-lg bg-sky-800"
-                                    :class="[!threshold.length ? 'bg-zinc-300' : 'hover:bg-slate-500']"
-                                    as="button" type="button" :disabled="!threshold.length" @click="(threshold='')">Search
                                 </Link>
                             </div>
                         </div>

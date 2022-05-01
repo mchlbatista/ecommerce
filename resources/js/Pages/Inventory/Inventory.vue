@@ -11,7 +11,6 @@ export default {
         Pagination,
     },
     props: {
-        user: Object,
         inventory: Object
     }
 }
