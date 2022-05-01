@@ -21,7 +21,7 @@ export default {
         isNumber(event){
             event = (event) ? event : window.event;
             var charCode = (event.which) ? event.which : event.keyCode;
-            if ((charCode > 31 && (charCode < 48 || charCode > 57)) && charCode !== 46) {
+            if ((charCode < 48 || charCode > 57)) {
                 event.preventDefault();
             } else {
                 return true;
