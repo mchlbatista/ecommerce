@@ -12,6 +12,13 @@ export default {
     },
     props: {
         inventory: Object
+    },
+    methods: {
+        toMoneyFormat(value){
+            return '$' + (
+                value > 0 ? (value / 100) : 0
+            ).toLocaleString(undefined, { minimumFractionDigits: 2 })
+        }
     }
 }
 </script>
@@ -46,8 +53,8 @@ export default {
                 </td>
                 <td class="border-b border-slate-300 p-4 pl-8">{{ i.quantity }}</td>
                 <td class="border-b border-slate-300 p-4 pl-8">{{ i.color }}</td>
-                <td class="border-b border-slate-300 p-4 pl-8">${{ i.price_cents / 100 }}</td>
-                <td class="border-b border-slate-300 p-4 pl-8">${{ i.cost_cents / 100 }}</td>
+                <td class="border-b border-slate-300 p-4 pl-8">{{ toMoneyFormat(i.price_cents) }}</td>
+                <td class="border-b border-slate-300 p-4 pl-8">{{ toMoneyFormat(i.cost_cents)}}</td>
             </tr>
         </tbody>
     </table>

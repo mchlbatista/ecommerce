@@ -53,8 +53,11 @@ Inventory Controller (Tests\Feature\InventoryController)
 Products Controller (Tests\Feature\ProductsController)
  ✔ Can get user products
  ✔ Can get user product
+ ✔ Can updated user product
+ ✔ Fails update with invalid input with data set #0
+ ✔ Fails update with invalid input with data set #1
 
-Time: 00:03.859, Memory: 34.50 MB
+Time: 00:04.973, Memory: 36.50 MB
 
-OK (6 tests, 67 assertions)
+OK (9 tests, 93 assertions)
 ```

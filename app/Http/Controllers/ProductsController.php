@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProductUpdateRequest;
 use App\Models\Product;
-use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class ProductsController extends Controller
@@ -38,8 +38,7 @@ class ProductsController extends Controller
     public function show($id)
     {
         $user_id = auth()->user()->id;
-        $product = Product::withCount('inventories')
-        ->whereAdminId($user_id)
+        $product = Product::whereAdminId($user_id)
         ->whereId($id)
         ->first();
 
@@ -54,5 +53,29 @@ class ProductsController extends Controller
         return Inertia::render('Products/Product',[
             'product' => $product
         ]);
+    }
+
+    /**
+     * Update resource
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function update(ProductUpdateRequest $request, $id)
+    {
+        $user_id = auth()->user()->id;
+        // Be sure that the product
+        // we are trying to update belongs to the current user
+        $product = Product::whereAdminId($user_id)
+        ->whereId($id)
+        ->first();
+
+        if($product){
+            $product->update($request->post());
+            return Inertia::render('Products/Product',[
+                'product' => $product
+            ]);
+        }
+
+        return redirect()->route('products');
     }
 }

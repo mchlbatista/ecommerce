@@ -45,5 +45,6 @@ Route::middleware(['auth'])->group(function () {
     Route::controller(ProductsController::class)->group(function () {
         Route::get('/products', 'index')->name('products');
         Route::get('/product/{id}', 'show')->name('products.product');
+        Route::put('/product/{id}', 'update')->name('products.update');
     });
 });
