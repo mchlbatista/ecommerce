@@ -9,6 +9,7 @@
 1. Make
 2. Composer
 3. Docker
+4. Docker Compose
 
 ### Setup
 
