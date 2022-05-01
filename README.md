@@ -50,7 +50,11 @@ Inventory Controller (Tests\Feature\InventoryController)
  ✔ Get user inventory sku
  ✔ Get user inventory product id
 
-Time: 00:02.295, Memory: 34.50 MB
+Products Controller (Tests\Feature\ProductsController)
+ ✔ Can get user products
+ ✔ Can get user product
 
-OK (4 tests, 34 assertions)
+Time: 00:03.859, Memory: 34.50 MB
+
+OK (6 tests, 67 assertions)
 ```

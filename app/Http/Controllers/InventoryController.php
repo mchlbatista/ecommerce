@@ -69,7 +69,7 @@ class InventoryController extends Controller
     {
         $user_id = auth()->user()->id;
         $inventory = Inventory::byUser($user_id)
-        ->where('sku', '=', $sku)
+        ->whereSku($sku)
         ->paginate(static::PAGINATION);
 
         if(!$inventory->total()) {
@@ -97,7 +97,7 @@ class InventoryController extends Controller
     {
         $user_id = auth()->user()->id;
         $inventory = Inventory::byUser($user_id)
-        ->where('product_id', '=', $id)
+        ->whereProductId($id)
         ->paginate(static::PAGINATION);
 
         if(!$inventory->total()) {
