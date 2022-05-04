@@ -14,6 +14,15 @@ class InventoryController extends Controller
     public const PAGINATION = 10;
 
     /**
+     * Default Details Object
+     */
+    protected const DEFAULT_OBJ = [
+        'threshold' => "",
+        'sku' => "",
+        'product_id' => ""
+    ];
+
+    /**
      * Display a list of current User Inventory.
      *
      * @return \Illuminate\Http\Response
@@ -26,7 +35,8 @@ class InventoryController extends Controller
 
         return Inertia::render('Inventory/Inventory',[
             'inventory' => $inventory,
-            'title' => 'Inventory'
+            'title' => 'Inventory',
+            'details' => static::DEFAULT_OBJ
         ]);
     }
 
@@ -54,7 +64,10 @@ class InventoryController extends Controller
 
         return Inertia::render('Inventory/Inventory',[
             'inventory' => $inventory,
-            'title' => "Inventory | With less than \"$threshold\" qty"
+            'title' => "Inventory | With less than \"$threshold\" qty",
+            'details' => array_merge(static::DEFAULT_OBJ, [
+                'threshold' => $threshold
+            ])
         ]);
     }
 
@@ -82,7 +95,10 @@ class InventoryController extends Controller
 
         return Inertia::render('Inventory/Inventory',[
             'inventory' => $inventory,
-            'title' => "Inventory | SKU \"$sku\""
+            'title' => "Inventory | SKU \"$sku\"",
+            'details' => array_merge(static::DEFAULT_OBJ, [
+                'sku' => $sku
+            ])
         ]);
     }
 
@@ -108,9 +124,13 @@ class InventoryController extends Controller
             );
         }
 
+
         return Inertia::render('Inventory/Inventory',[
             'inventory' => $inventory,
-            'title' => "Inventory | Product ID \"$id\""
+            'title' => "Inventory | Product ID \"$id\"",
+            'details' => array_merge(static::DEFAULT_OBJ, [
+                'product_id' => $id
+            ])
         ]);
     }
 }

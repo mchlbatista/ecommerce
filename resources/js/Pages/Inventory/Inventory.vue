@@ -11,7 +11,8 @@ export default {
         Pagination,
     },
     props: {
-        inventory: Object
+        inventory: Object,
+        details: Object
     },
     methods: {
         toMoneyFormat(value){

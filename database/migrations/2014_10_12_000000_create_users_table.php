@@ -17,8 +17,6 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('password_hash');
-            $table->string('password_plain');
             $table->boolean('superadmin');
             $table->string('shop_name');
             $table->timestamp('email_verified_at')->nullable();

@@ -24,8 +24,6 @@ class UsersSeeder extends Seeder
                 'name' => $csv[1],
                 'email' => $csv[2],
                 'password' => $csv[3],
-                'password_hash' => $csv[3],
-                'password_plain' => $csv[4],
                 'superadmin' => $csv[5] == "0" ? false : true,
                 'shop_name' => $csv[6],
                 'created_at' => $csv[8],

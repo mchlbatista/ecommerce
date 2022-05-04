@@ -10,13 +10,6 @@ export default {
         Link,
         Pagination,
     },
-    data(){
-        return{
-            sku: "",
-            product_id: "",
-            threshold: ""
-        }
-    },
     methods: {
         isNumber(event){
             event = (event) ? event : window.event;
@@ -55,14 +48,16 @@ export default {
                                     type="text"
                                     class="px-5 h-10 w-full rounded-lg focus:shadow focus:outline-none"
                                     placeholder="SKU"
-                                    v-model="sku">
+                                    v-model="$page.props.details.sku">
                             </div>
                             <div class="flex-none w-30 ml-2">
                                 <Link
-                                    :href="route('inventory.sku', sku)"
+                                    :href="route('inventory.sku', $page.props.details.sku)"
                                     class="px-5 h-10 w-30 text-white rounded-lg bg-sky-800"
-                                    :class="[!sku.length ? 'bg-zinc-300' : 'hover:bg-slate-500']"
-                                    as="button" type="button" :disabled="!sku.length" @click="(sku='')">Search
+                                    :class="[!$page.props.details.sku.length ? 'bg-zinc-300' : 'hover:bg-slate-500']"
+                                    as="button" type="button"
+                                    :disabled="!$page.props.details.sku.length"
+                                    @click="($page.props.details.sku.length='')">Search
                                 </Link>
                             </div>
                             <div class="flex-auto w-30 ml-2">
@@ -70,15 +65,17 @@ export default {
                                     type="text"
                                     class="px-5 h-10 w-full rounded-lg focus:shadow focus:outline-none"
                                     placeholder="Product ID"
-                                    v-model="product_id"
+                                    v-model="$page.props.details.product_id"
                                     @keypress="isNumber($event)">
                             </div>
                             <div class="flex-none w-30 ml-2">
                                 <Link
-                                    :href="route('inventory.product_id', product_id)"
+                                    :href="route('inventory.product_id', $page.props.details.product_id)"
                                     class="px-5 h-10 w-30 text-white rounded-lg bg-sky-800"
-                                    :class="[!product_id.length ? 'bg-zinc-300' : 'hover:bg-slate-500']"
-                                    as="button" type="button" :disabled="!product_id.length" @click="(product_id='')">Search
+                                    :class="[!$page.props.details.product_id.length ? 'bg-zinc-300' : 'hover:bg-slate-500']"
+                                    as="button" type="button"
+                                    :disabled="!$page.props.details.product_id.length"
+                                    @click="($page.props.details.product_id='')">Search
                                 </Link>
                             </div>
                             <div class="flex-auto w-30 ml-2">
@@ -86,15 +83,17 @@ export default {
                                     type="text"
                                     class="px-5 h-10 w-full rounded-lg focus:shadow focus:outline-none"
                                     placeholder="Quantity Threshold"
-                                    v-model="threshold"
+                                    v-model="$page.props.details.threshold"
                                     @keypress="isNumber($event)">
                             </div>
                             <div class="flex-none w-30 ml-2">
                                 <Link
-                                    :href="route('inventory.quantity_below_that', threshold)"
+                                    :href="route('inventory.quantity_below_that', $page.props.details.threshold)"
                                     class="px-5 h-10 w-30 text-white rounded-lg bg-sky-800"
-                                    :class="[!threshold.length ? 'bg-zinc-300' : 'hover:bg-slate-500']"
-                                    as="button" type="button" :disabled="!threshold.length" @click="(threshold='')">Search
+                                    :class="[!$page.props.details.threshold.length ? 'bg-zinc-300' : 'hover:bg-slate-500']"
+                                    as="button" type="button"
+                                    :disabled="!$page.props.details.threshold.length"
+                                    @click="($page.props.details.threshold='')">Search
                                 </Link>
                             </div>
                         </div>
