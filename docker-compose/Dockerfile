@@ -7,6 +7,8 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y \
     build-essential \
     libpng-dev \
+    libonig-dev \
+    libzip-dev \
     libjpeg62-turbo-dev \
     libfreetype6-dev \
     locales \
@@ -32,7 +34,8 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 COPY . /app
 
 # Fix Permissions
-# RUN chown -R www-data:www-data /app
+RUN chown -R $USER:www-data /app/storage
+RUN chown -R $USER:www-data /app/bootstrap/cache
 RUN chmod -R 775 /app/storage
 RUN chmod -R 755 /app/bootstrap/cache
 
