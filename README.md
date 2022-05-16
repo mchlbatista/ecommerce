@@ -55,3 +55,22 @@ Time: 00:04.973, Memory: 36.50 MB
 
 OK (9 tests, 93 assertions)
 ```
+
+## Bonus
+---
+### Apple Silicon
+---
+Create `docker-compose.override.yml` file and add:
+
+```
+version: '3.1'
+services:
+
+  db:
+    image: mysql/mysql-server
+
+  webserver:
+    image: arm64v8/nginx
+```
+
+To use `MySQL` and `NGINX` ARM64 based images. `php:7.4-fpm` image arch-version used for the main `app` should be automatically pulled using the local arch.
